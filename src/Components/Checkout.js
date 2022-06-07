@@ -114,7 +114,7 @@ export default function Checkout({cartItems, setCartItems, totalCartPrice, setSh
         getInfo()
         }
       },[])
-      console.log(checkOut)
+     
 
       React.useEffect(() => {
         if(checked === true) {

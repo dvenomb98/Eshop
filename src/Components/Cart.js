@@ -23,7 +23,7 @@ function Cart({showCart, setShowCart, cartItems, setCartItems, totalCartPrice, r
 
      
 
-    console.log(cartItems)
+    
     
     return (
         <Transition.Root show={showCart} as={Fragment}>

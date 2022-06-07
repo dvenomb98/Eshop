@@ -27,10 +27,33 @@ function App() {
   const [products, setProducts] = React.useState([])
   const [searchTerm, setSearchTerm] = React.useState("")
   const [Categories, setCategories] = React.useState([]);
-  const [cartItems, setCartItems] = React.useState([])
+  
   const [showCart, setShowCart] = React.useState(false);
   const [count, setCount] = React.useState(8)
   let totalCartPrice = 0
+  
+  const initializeState = () => (
+    JSON.parse(localStorage.getItem("products")) || []
+  );
+
+  const [cartItems, setCartItems] = React.useState(initializeState())
+
+  React.useEffect(() => {
+
+  
+    const cartItems = JSON.parse(localStorage.getItem("products"));
+    if (cartItems) {
+     setCartItems(cartItems);
+    }
+  }, []);
+
+
+  React.useEffect(() => {
+    
+    localStorage.setItem("products", JSON.stringify(cartItems))
+  
+  },[cartItems])
+
 
   
   cartItems.map((item, index) => totalCartPrice += item.price * item.qnt)

@@ -15,7 +15,7 @@ function AccountDetails() {
 
   },[])
 
-  console.log(userInfo)
+  
 
   
   return (
